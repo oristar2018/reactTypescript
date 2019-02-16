@@ -1,0 +1,265 @@
+@mixin flexboxCol () {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+
+}
+
+@mixin flexboxRow () {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin gridContent () {
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+
+}
+
+@mixin centerElement () {
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+}
+
+img, picture {
+  width: 100%;
+  height: 100%
+}
+
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  
+ @include flexboxCol;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: bebas-neue, sans-serif;
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  height: auto
+}
+
+#landing {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+.xadiaText {
+  
+  color: white;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  text-align: justify;
+  text-indent: 5px;
+  font-size: 24px;
+  letter-spacing: 0.09rem;
+  width: 50%;
+  /*opacity: 0;*/
+
+}
+
+#content1 {
+  height: 100vh;
+  width: 100vw;
+  background: #332f45 /*#6d6658*/;
+  position: relative;
+  @include gridContent;
+}
+
+#content2 {
+
+
+   height: 100vh;
+  width: 100vw;
+  background: #332f45 /*#6d6658*/;
+  position: relative;
+  @include gridContent;
+
+}
+
+
+
+
+#content2text {
+
+  
+  @include flexboxCol;
+
+}
+
+
+.dragonGif2 {
+  
+  height: 100%;
+  width: 100%;
+
+}
+
+#content1text {
+  grid-column: 1;
+ @include flexboxCol;
+
+}
+
+.dragonGif {
+  grid-column: 2;
+  height: 100%;
+  width: 100%;
+}
+
+#dragonGif1 {
+  
+  position: relative;
+  /*right: -9999px;*/
+}
+
+#dragonGif2 {
+  position: relative;
+  
+}
+
+#dragonGif3 {
+  
+  width: 100%;
+  height: 100%;
+}
+
+
+#dragonVideo {
+  @include centerElement;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+#title {
+  color: white;
+  @include centerElement;
+  z-index: 5000;
+  letter-spacing: 0.09rem;
+  line-height: 1.4;
+  box-shadow: 0px 0px 20px #c3d4d1;
+  padding: 20px
+}
+
+ #content3 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: relative;
+
+  
+}
+
+#content3text {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  @include flexboxCol;
+  
+  
+}
+
+#content4 {
+  height: 100vh;
+  width: 100vw;
+  @include gridContent;
+  position: relative;
+}
+
+#xadiaText41 {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  width: auto;
+
+}
+
+#xadiaText42 {
+  
+  position: absolute;
+  top: 80vh;
+  left: 64%;
+  width: auto;
+
+}
+
+@media (max-width: 1450px) {
+
+    .xadiaText {
+      font-size: 20px
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+  #content1, #content2, #content4 {
+
+  
+  grid-template-columns: 1fr;
+  grid-template-rows: 50% 50%
+
+}
+
+
+
+#content1text {
+  grid-row: 2 / span 1;
+}
+
+.dragonGif1 {
+  grid-row: 1 / span 1
+}
+
+.xadiaText {
+font-size: 16px;
+}
+
+
+}
+
+@media (max-width: 850px) {
+
+.xadiaText {
+font-size: 14px;
+}
+
+  }
+
+  @media (max-width: 650px) {
+
+    .xadiaTextBis {
+  width: 80% !important
+}
+  }
+
+@media (max-width: 481px) {
+
+.xadiaText {
+font-size: 12px;
+}
+  }
